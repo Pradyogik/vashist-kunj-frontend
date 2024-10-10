@@ -125,17 +125,23 @@
                     <fieldset class="row applicant-row">
                   <legend class="applicant-legend">Primary Applicant</legend>
                 
-                  <div class="col-sm-3 col-lg-3">
+                  <div class="col-sm-3 col-lg-4">
                 <div class="form-group">
-                <label>Name ( नाम ) <span style="color:red;">*<span></span></label>
-                <input type="text" name="name" id="name" class="form-control"  data-error="Please enter your name" placeholder="Enter your name" >
+                <label>First Name (  नाम ) <span style="color:red;">*<span></span></label>
+                <input type="text" name="name" id="name"  class="form-control"  data-error="Please enter your name" placeholder="Enter your name" >
                 <!-- <div class="help-block with-errors"></div> -->
-                <div class="invalid-feedback">
-                    You must agree before submitting.
-                  </div>
+                
                 </div>
                 </div>
-                <div class="col-sm-3 col-lg-3" style="display: none;">
+                <div class="col-sm-3 col-lg-4">
+                    <div class="form-group">
+                    <label>Last Name ( नाम ) <span style="color:red;">*<span></span></label>
+                    <input type="text" name="name" id="name"  class="form-control"  data-error="Please enter your name" placeholder="Enter your name" >
+                    <!-- <div class="help-block with-errors"></div> -->
+                    
+                    </div>
+                    </div>
+                <div class="col-sm-3 col-lg-4" style="display: none;">
                     <div class="form-group">
                         <label for="size">Property Size</label>
                         <select name="size" id="size" class="form-control"  data-error="Please select your Property Size">
@@ -145,11 +151,12 @@
                             <option value="Up to 2000 Sq Meter">Up to 2000 Sq Meter</option>
                             <!-- Add more options as needed -->
                         </select>
+                        <p class="error-message" id="dob-error">Name is required</p>
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
                 
-                <div class="col-sm-3 col-lg-2">
+                <div class="col-sm-3 col-lg-4">
                     <div class="form-group">
                     <label>DOB ( जन्म तिथि ) <span style="color:red;">*<span></span>
                     </label>
@@ -157,8 +164,30 @@
                     <div class="help-block with-errors"></div>
                     </div>
                     </div>
+
+                    <div class="col-sm-3 col-lg-4">
+                        <div class="form-group">
+                            <label for="Gender">Gender</label>
+                            <select name="Gender" id="Gender" class="form-control" data-error="Please select your Gender" style="display: none;">
+                                <option value disabled selected>Select your Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">Others</option>
+                            </select>
+                            <div class="nice-select form-control" tabindex="0">
+                                <span class="current">Select your Gender</span>
+                                <ul class="list">
+                                    <li data-value="" class="option selected disabled">Select your Gender</li>
+                                    <li data-value="male" class="option">Male</li>
+                                    <li data-value="female" class="option">Female</li>
+                                    <li data-value="others" class="option">Others</li>
+                                </ul>
+                            </div>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
         
-                    <div class="col-sm-3 col-lg-2">
+                    <!-- <div class="col-sm-3 col-lg-4">
                         <div class="form-group" >
                             <label for="Gender">Gender ( लिंग )  <span style="color:red;">*<span></span>
                             </label>
@@ -170,7 +199,7 @@
                             </select>
                             <div class="help-block with-errors"></div>
                         </div>
-                    </div>
+                    </div> -->
                     
                 <div class="col-sm-3 col-lg-4">
                 <div class="form-group">
@@ -187,29 +216,39 @@
                 <div class="help-block with-errors"></div>
                 </div>
                 </div>
-                <div class="col-sm-2 col-lg-5">
-                    <div class="form-group" >
-                        <label for="Gender">Relation With Nominee (नामांकित व्यक्ति के साथ संबंध) <span style="color:red;">*<span></span>
-                        </label>
-                        <select name="Gender" id="Gender" class="form-control"  data-error="Please select your Gender">
-                            <option value="" disabled selected>Select Your Relation</option>
-                            <option value="brother">Brother</option>
-                            <option value="Sister">Sister</option>
-                            <option value="Mother">Mother</option>
-                            <option value="Father">Father</option>
-                            <option value="Wife">Wife</option>
-                            <option value="Husband">Husband</option>
-                            <option value="Son">Son</option>
-                            <option value="Daughter">Daughter</option>
-        
-        
-                            <!-- Add more options as needed -->
-                        </select>
-                        <div class="help-block with-errors"></div>
-                    </div>
+        <div class="col-sm-2 col-lg-4">
+            <div class="form-group">
+                <label for="nomineeRelation">Nominee's Relation (नॉमिनी के साथ संबंध) <span style="color:red;">*</span></label>
+                <select name="nomineeRelation" id="nomineeRelation" class="form-control" data-error="Please select your relation" style="display: none;">
+                    <option value="" disabled selected>Select Your Relation</option>
+                    <option value="brother">Brother</option>
+                    <option value="sister">Sister</option>
+                    <option value="mother">Mother</option>
+                    <option value="father">Father</option>
+                    <option value="wife">Wife</option>
+                    <option value="husband">Husband</option>
+                    <option value="son">Son</option>
+                    <option value="daughter">Daughter</option>
+                </select>
+                <div class="nice-select form-control" tabindex="0">
+                    <span class="current">Select Your Relation</span>
+                    <ul class="list">
+                        <li data-value="" class="option selected disabled">Select Your Relation</li>
+                        <li data-value="brother" class="option">Brother</li>
+                        <li data-value="sister" class="option">Sister</li>
+                        <li data-value="mother" class="option">Mother</li>
+                        <li data-value="father" class="option">Father</li>
+                        <li data-value="wife" class="option">Wife</li>
+                        <li data-value="husband" class="option">Husband</li>
+                        <li data-value="son" class="option">Son</li>
+                        <li data-value="daughter" class="option">Daughter</li>
+                    </ul>
                 </div>
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
         
-                <div class="col-sm-4 col-lg-3">
+                <div class="col-sm-4 col-lg-4">
                     <div class="form-group">
                     <label>Email ( ईमेल ) 
                     </label>
@@ -217,40 +256,55 @@
                     <div class="help-block with-errors"></div>
                     </div>
                     </div>
-                    <div class="col-sm-3 col-lg-3">
-                        <div class="form-group" >
-                            <label for="Category">Category ( श्रेणी ) <span style="color:red;">*<span></span>
-                            </label>
-                            <select name="Category" id="Category" class="form-control"  data-error="Please select your Category">
+                
+                    <div class="col-sm-3 col-lg-4">
+                        <div class="form-group">
+                            <label for="Category">Category ( श्रेणी ) <span style="color:red;">*</span></label>
+                            <select name="Category" id="Category" class="form-control" data-error="Please select your Category" style="display: none;">
                                 <option value="" disabled selected>Select Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                                <option value="scheduled_caste">General</option>
+                                <option value="general">General</option>
                                 <option value="scheduled_caste">Scheduled Caste</option>
-                                <option value="female">Scheduled Tribe</option>
-                                <option value="female">Other Backward Classes</option>
-                                <option value="female">Legislator/Member of Parliament and Freedom Fighter</option>
-                                <option value="female">Government employees and security personnel who have completed the age of 50 years</option>
-                                <option value="female">Employees of the Development Authority/UP Housing Development Board, Water Institution, Municipal Corporation, and Local Bodies</option>
-                                <option value="female">Retired soldiers and their dependents</option>
-                                <option value="female">Persons with disabilities</option>
-        
-                                <!-- Add more options as needed -->
+                                <option value="scheduled_tribe">Scheduled Tribe</option>
+                                <option value="obc">Other Backward Classes</option>
+                                <option value="legislator_mp_freedom_fighter">Legislator/Member of Parliament and Freedom Fighter</option>
+                                <option value="govt_employees_over_50">Government employees and security personnel who have completed the age of 50 years</option>
+                                <option value="employees_of_local_bodies">Employees of Development Authority/UP Housing Development Board, Water Institution, Municipal Corporation, and Local Bodies</option>
+                                <option value="retired_soldiers_dependents">Retired soldiers and their dependents</option>
+                                <option value="persons_with_disabilities">Persons with disabilities</option>
                             </select>
+                            <div class="nice-select form-control" tabindex="0">
+                                <span class="current">Select Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <ul class="list">
+                                    <li data-value="" class="option selected disabled">Select Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                                    <li data-value="general" class="option">General</li>
+                                    <li data-value="scheduled_caste" class="option">Scheduled Caste</li>
+                                    <li data-value="scheduled_tribe" class="option">Scheduled Tribe</li>
+                                    <li data-value="obc" class="option">Other Backward Classes</li>
+                                    <li data-value="legislator_mp_freedom_fighter" class="option">Legislator/Member of Parliament and Freedom Fighter</li>
+                                    <li data-value="govt_employees_over_50" class="option">Government employees and security personnel who have completed the age of 50 years</li>
+                                    <li data-value="employees_of_local_bodies" class="option">Employees of Development Authority/UP Housing Development Board, Water Institution, Municipal Corporation, and Local Bodies</li>
+                                    <li data-value="retired_soldiers_dependents" class="option">Retired soldiers and their dependents</li>
+                                    <li data-value="persons_with_disabilities" class="option">Persons with disabilities</li>
+                                </ul>
+                            </div>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-lg-4">
+                    
+                    <div class="col-sm-4 col-lg-6">
                     <div class="form-group">
                     <label>Applicant Mobile ( आवेदक का मोबाइल ) <span style="color:red;">*<span></span>
                     </label>
-                    <input type="text" name="applicant_mobile" id="applicant_mobile" class="form-control"   placeholder="Applicant Mobile">
-                    <div class="help-block with-errors"></div>
+                    <input type="text" name="applicant_mobile" id="applicant_mobile" class="form-control" placeholder="Applicant Mobile">
+
+                    <!-- <div class="help-block with-errors"></div> -->
                     </div>
                     </div>
-                    <div class="col-sm-4 col-lg-4">
+                    <div class="col-sm-4 col-lg-6">
                         <div class="form-group">
                         <label>Applicant Alternate Mobile ( वैकल्पिक मोबाइल ) <span style="color:red;">*<span></span></label>
                         <input type="text" name="applicant_alternate_mobile" id="applicant_alternate_mobile" class="form-control"   placeholder="Applicant Alternate Mobile">
-                        <div class="help-block with-errors"></div>
+                        <!-- <div class="help-block with-errors"></div> -->
                         </div>
                         </div>
         
@@ -495,7 +549,7 @@
             </div>
            
             <div class="form-group">
-                <label for="selfDeclaration">
+                <label for="upload_affidavit">
                     Upload Affidavit (Please upload the copy in PDF, JPG, PNG, JPEG format only and 500 KB is the max upload size) <br>
 ( हलफनामा अपलोड करें ( कृपया केवल PDF, JPG, PNG, JPEG प्रारूप में कॉपी अपलोड करें और 500 KB अधिकतम अपलोड आकार है ))
 
@@ -506,22 +560,23 @@
                     Download Format of Affidavit
                 </a>
                 <br><br>
-                <input type="file" name="selfDeclaration" id="selfDeclaration" class="form-control" accept=".pdf, .jpg, .jpeg, .png" >
+                <input type="file" name="upload_affidavit" id="upload_affidavit" class="form-control" accept=".pdf, .jpg, .jpeg, .png" >
             </div>
             
             <div class="form-group">
-            <label for="selfDeclaration">
+            <label for="upload_self_declaration">
                 Upload Self Declaration (Please upload the copy in PDF, JPG, PNG, JPEG format only and 500 KB is the max upload size)* <br>
 ( स्व-घोषणा अपलोड करें ( कृपया केवल PDF, JPG, PNG, JPEG प्रारूप में कॉपी अपलोड करें और 500 KB अधिकतम अपलोड आकार है ) )
 
                 <span style="color:red;">*</span>
             </label>
             <br>
+            <!-- selfDeclaration --old id -->
             <a href="assets/Self_Declaration.pdf" download style="color: blue; text-decoration: underline;">
                 Download Format of Self Declaration
             </a>
             <br><br>
-            <input type="file" name="selfDeclaration" id="selfDeclaration" class="form-control" accept=".pdf, .jpg, .jpeg, .png" >
+            <input type="file" name="upload_self_declaration" id="upload_self_declaration" class="form-control" accept=".pdf, .jpg, .jpeg, .png" >
         </div>
         
             <div id="jointApplicantSection" style="display: none;">
@@ -1093,55 +1148,7 @@
     </div>
 </footer>
 
-        <script>
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-              event.preventDefault(); // Prevent form submission for validation
-        
-              let isValid = true;
-        
-              // Get all input and select elements
-              const fields = document.querySelectorAll('#contactForm input, #contactForm select');
-        
-              fields.forEach(field => {
-                if (field.value.trim() === '') {
-                  // Add red border if empty
-                  field.classList.add('error-border');
-                  isValid = false;
-                } else {
-                  // Remove red border if filled
-                  field.classList.remove('error-border');
-                }
-              });
-        
-              if (isValid) {
-                // Submit form if all fields are valid
-                alert('Form submitted successfully');
-                // You can proceed with the form submission here
-              } else {
-                alert('Please fill out all required fields.');
-              }
-            });
-          </script>
-        
-        
-        
-        <!-- <script>
-            function updateStep(step) {
-                // Remove 'step-active' class from all steps
-                const steps = document.querySelectorAll('.progress-step');
-                steps.forEach(s => {
-                    // s.classList.remove('step-active');
-                    s.classList.add('step-inactive');
-                   
-                });
-        
-                // Add 'step-active' to the clicked step
-                step.classList.add('step-active');
-                step.classList.remove('step-inactive');
-
-
-            }
-        </script> -->
+       
         <script>
             function toggleStep(step) {
     if (!step.classList.contains('step-active')) {
@@ -1152,43 +1159,149 @@
 }
 
         </script>
-        
-        <script>
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent form submission for validation
-        
-                let isValid = true;
-        
-                // Fields and their corresponding error messages
-                const fields = [
-                    { field: document.getElementById('name'), error: document.getElementById('nameError') },
-                    { field: document.getElementById('dob'), error: document.getElementById('dobError') },
-                    { field: document.getElementById('gender'), error: document.getElementById('genderError') },
-                    { field: document.getElementById('father_name'), error: document.getElementById('fatherNameError') }
-                    // Add additional fields and errors here
-                ];
-        
-                fields.forEach(({ field, error }) => {
-                    if (field.value.trim() === '') {
-                        field.classList.add('error-border');
-                        error.style.display = 'block';
-                        isValid = false;
-                    } else {
-                        field.classList.remove('error-border');
-                        error.style.display = 'none';
-                    }
-                });
-        
-                if (isValid) {
-                    alert('Form submitted successfully');
-                } else {
-                    alert('Please fill out all required fields.');
-                }
-            });
-        </script>
-    
-    
+  
+  
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission until validation is done
+    let isValid = true; // Flag to track form validity
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    // Get all required inputs and select elements
+    let inputs = document.querySelectorAll('input, select');
+
+    // Loop through each input
+    inputs.forEach(function(input) {
+        // Reset previous error states
+        input.style.border = '';
+        removeErrorMessage(input);
+
+        // Check if the input is empty (for required fields)
+        if (input.hasAttribute('data-error') && !input.value) {
+            input.style.border = '2px solid red'; // Set red border for empty fields
+            showErrorMessage(input, 'This field is required.');
+            isValid = false; // Mark form as invalid
+        }
+
+        // Special validation for mobile number fields
+        if (input.id === 'applicant_mobile' || input.id === 'applicant_alternate_mobile') {
+            const mobilePattern = /^[6-9]\d{9}$/; // Example: Indian mobile number pattern (starts with 6-9, 10 digits)
+            if (!mobilePattern.test(input.value)) {
+                input.style.border = '2px solid red'; // Set red border for invalid mobile numbers
+                showErrorMessage(input, 'Please enter a valid mobile number.');
+                isValid = false;
+            }
+        }
+
+        // Special validation for file uploads (affidavit and self declaration)
+        if (input.id === 'upload_affidavit' || input.id === 'upload_self_declaration') {
+            const allowedFileTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+            const maxFileSize = 5 * 1024 * 1024; // 5 MB
+
+            // Check if file is selected
+            if (!input.files.length) {
+                input.style.border = '2px solid red'; // Set red border for no file selected
+                showErrorMessage(input, 'Please upload a file.');
+                isValid = false;
+            } else {
+                const file = input.files[0];
+
+                // Check file type
+                if (!allowedFileTypes.includes(file.type)) {
+                    input.style.border = '2px solid red'; // Set red border for invalid file type
+                    showErrorMessage(input, 'Invalid file type. Please upload a PDF or Word document.');
+                    isValid = false;
+                }
+
+                // Check file size
+                if (file.size > maxFileSize) {
+                    input.style.border = '2px solid red'; // Set red border for file too large
+                    showErrorMessage(input, 'File size is too large. Max size is 5 MB.');
+                    isValid = false;
+                }
+            }
+        }
+    });
+
+    // If the form is valid, submit it
+    if (isValid) {
+        document.getElementById('contactForm').submit();
+    } else {
+        alert("Please correct the errors and try again.");
+    }
+});
+
+// Function to show error message below an input
+function showErrorMessage(input, message) {
+    let errorElement = document.createElement('div');
+    errorElement.classList.add('error-message'); // Add your CSS class for styling
+    errorElement.style.color = 'red';
+    errorElement.style.fontSize = '12px';
+    errorElement.textContent = message;
+    
+    // Append the error message after the input
+    input.parentNode.appendChild(errorElement);
+}
+
+// Function to remove previous error message
+function removeErrorMessage(input) {
+    let errorMessage = input.parentNode.querySelector('.error-message');
+    if (errorMessage) {
+        errorMessage.remove();
+    }
+}
+
+  </script>
+
+  <script>
+    // Get all custom select elements
+const customSelects = document.querySelectorAll('.nice-select');
+
+// Loop through each custom select element to add event listeners
+customSelects.forEach(select => {
+    select.addEventListener('click', function(event) {
+        event.stopPropagation(); // Stop propagation to prevent closing dropdown on document click
+        // Toggle the active class on the clicked select element to show/hide the dropdown
+        this.classList.toggle('open');
+
+        // Close other dropdowns when this one is clicked
+        customSelects.forEach(otherSelect => {
+            if (otherSelect !== this) {
+                otherSelect.classList.remove('open');
+            }
+        });
+    });
+});
+
+// Close the dropdown if clicking anywhere outside of the dropdown
+document.addEventListener('click', function() {
+    customSelects.forEach(select => {
+        select.classList.remove('open'); // Remove open class to close all dropdowns
+    });
+});
+
+// Handle the selection of an option
+document.querySelectorAll('.nice-select .option').forEach(option => {
+    option.addEventListener('click', function() {
+        let selectElement = this.closest('.nice-select');
+        let selectedText = this.innerText;
+
+        // Update the displayed selected value
+        selectElement.querySelector('.current').innerText = selectedText;
+
+        // Update the actual select input value
+        let hiddenSelect = selectElement.previousElementSibling;
+        hiddenSelect.value = this.getAttribute('data-value');
+        
+        // Close the dropdown after selection
+        selectElement.classList.remove('open');
+    });
+});
+
+  </script>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
