@@ -74,20 +74,6 @@
     position: relative;
 }
 
-/* .progress-step::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -50%;
-    width: 100%;
-    height: 2px;
-    background-color: #e0e0e0;
-    z-index: -1;
-} */
-
-/* .progress-step:first-child::before {
-    display: none;
-} */
 .step-circle {
     width: 40px;
     height: 40px;
